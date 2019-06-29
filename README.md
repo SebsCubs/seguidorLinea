@@ -19,4 +19,5 @@ Control de velocidad de motores.
 # Tareas
 - David: Librerías con el ADC y TPM
 - Paola: Processing y formato de envío
-- Sebastian: Controlador de velocidad y dirección
+- Sebastian: Controlador de velocidad y dirección \n
+Deadline: 5/07/2019
