@@ -17,6 +17,6 @@ Control de velocidad de motores.
 - Se actualiza el valor del PWM para cada motor según una referencia, dado por los sensores infrarrojos
           
 # Tareas
-David: Librerías con el ADC y TPM
-Paola: Processing y formato de envío
-Sebastian: Controlador de velocidad y dirección
+- David: Librerías con el ADC y TPM
+- Paola: Processing y formato de envío
+- Sebastian: Controlador de velocidad y dirección
