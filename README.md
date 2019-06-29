@@ -15,4 +15,7 @@ Control de dirección
           - Se usa el valor contado y la frecuencia para hallar los RPM (da 3 flancos de subida por vuelta).
           - Se actualiza el valor del PWM para cada motor según una referencia, dado por los sensores infrarrojos
           
-        
+# Tareas
+David: Librerías con el ADC y TPM
+Paola: Processing y formato de envío
+Sebastian: Controlador de velocidad y dirección
