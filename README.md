@@ -2,12 +2,14 @@
 Codigo para QE16 seguidor de línea, vehículo de altas prestaciones.
 
 # Comunicaciones
-###Desde la interfaz hacia el microcontrolador
+
+##Desde la interfaz hacia el microcontrolador
 - Encender motores: (48)
 - Apagar motores: (49)
 - Constante de proporción M1 = (2 bytes)
 - Constante de proporción M1 = (2 bytes)
-###Desde el micro hacia la interfaz
+
+##Desde el micro hacia la interfaz
 - Paquetes de 22 bytes: un byte de inicio(00000000), 16 bytes de datos de 8 sensores, 4 bytes de datos de velocidad de motores, un byte de parada (11111111)
 - Se enviará cada 1/50
 
