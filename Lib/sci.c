@@ -3,13 +3,14 @@
 #include <hidef.h> 
 #include "derivative.h"
 
-
+/*Declaración de variables */ 
 float Kp,Kd,KpMIzq,KpMDer, KiMIzq, KiMDer;
 volatile unsigned char iSCI;
 volatile unsigned int KpMotor=1,byteEnviar, change;
 unsigned char flag_rx;		//variable dummy para mecanismo que limpia interrupcion 
 unsigned short varRetard;
 unsigned char flag_StarStop;
+
 //variables del send ascii
 unsigned long factor = 1;	
 unsigned char arreglo[8]=0, iAscii = 0,icalibrate=0;

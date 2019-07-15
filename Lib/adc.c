@@ -1,19 +1,23 @@
-///******************************************************************************
-///*  UNIVERSIDAD NACIONAL DE COLOMBIA - FACULTAD DE INGENIERÍA - SEDE BOGOTÁ   *
-///*     Departamento de Ing. Mecánica y Mecatrónica  - Microcontroladores      *
-///******************************************************************************
-///*Fecha: 06/2019	                                                          *
-///*                	                                                          *
-///*Autor: Sebastián Cubides, David Fonseca   y Paola Medina                    *
-///*                	                                                          *
-///*Descripción: Source ADC, lectura de sensores con ADC y envîo de datos por SCI  	  *
-///*                	                                                          *
-///*Documentación:	-Hoja de datos	para MCU QE16 NXP	                      *
-///*****************************************************************************/
+///**********************************************************************************
+///*  UNIVERSIDAD NACIONAL DE COLOMBIA - FACULTAD DE INGENIERÍA - SEDE BOGOTÁ   	*
+///*     Departamento de Ing. Mecánica y Mecatrónica  - Microcontroladores      	*
+///**********************************************************************************
+///*Nombre del archivo: adc.c                                                   	*
+///*				                                                          		*
+///*Fecha: 06/2019	                                                          		*
+///*                	                                                        	*
+///*Autor: Sebastián Cubides, David Fonseca   y Paola Medina                    	*
+///*                	                                                        	*
+///*Descripción: Source ADC, lectura de sensores con ADC y envio de datos por SCI	*
+///*                	                                                          	*
+///*Documentación:	-Hoja de datos	para MCU QE16 NXP	                      		*
+///*********************************************************************************/
 
 #include <hidef.h> /* for EnableInterrupts macro */
 #include "derivative.h" /* include peripheral declarations */
 #include "sci.h"
+
+//variables para convertir con ADC
 
 unsigned int x_h;
 volatile unsigned char canal = 1, calibracionIniciada,medidoCalibrado;
@@ -22,7 +26,7 @@ unsigned int maxSensorvalorCals[8]=0, minSensorvalorCals[8]=0;
 
 unsigned int  ich=0,ireset,jset,iset,irecord,imed=0;
 
-//variables seguirLinea
+//variables para seguirLinea
 
 volatile unsigned long promedio = 0,suma = 0;
 volatile unsigned int refLinea = 0, denominador=0;
@@ -30,20 +34,22 @@ volatile unsigned int iLinea = 0;
 volatile char enLinea;
 volatile unsigned int leido=0;
 
+//prototipos
 void loopMainADC(void);
 void calcularRefLinea(void);
 void medirCalibrado(void);
 void calibrar(void);
 void retardo(unsigned short);
 
+
 interrupt VectorNumber_Vadc void adc_isr() {		//interrupción que se activa con cada conversion completada
-	switch (canal) {				//alternar entre canales segun el canal anterior leido
+	switch (canal) {								//alternar entre canales segun el canal anterior leido
 	case 1:
 		dato[0] = ADCR;								//como se esta en configuracion de solo 8 bits
 													//como se esta en configuracion de solo 8 bits
 		canal = 2;									//basta con leer solo la parte baja del resultado ADCRL
 		ADCSC1_ADCH = 0b00011;						//cambiar de canal
-		break;					//importante break en switch para no evaluar mas casos.
+		break;										//importante break en switch para no evaluar mas casos.
 	case 2:
 		dato[1] = ADCR;
 		canal = 3;
