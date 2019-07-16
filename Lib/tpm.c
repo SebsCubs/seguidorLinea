@@ -2,14 +2,14 @@
 ///*  UNIVERSIDAD NACIONAL DE COLOMBIA - FACULTAD DE INGENIERÍA - SEDE BOGOTÁ   *
 ///*     Departamento de Ing. Mecánica y Mecatrónica  - Microcontroladores      *
 ///******************************************************************************
-///*Fecha: 06/2019															  *
-///*                														      *
-///*Autor: Sebastián Cubides, David Fonseca y Paola Medina					  *
-///*                															  *
+///*Fecha: 17/07/2019															*
+///*                														    *
+///*Autor: Sebastián Cubides, David Fonseca y Paola Medina					  	*
+///*                															*
 ///*Descripción: Source TPM, control de motores con PWM y lectura de encoders,  *
-///*             comprobado por osciloscopio                              	  *
-///*                															  *
-///*Documentación:	-Hoja de datos	para MCU QE16 NXP	                      *
+///*             comprobado por osciloscopio                              	  	*
+///*                															*
+///*Documentación:	-Hoja de datos	para MCU QE16 NXP	                      	*
 ///*****************************************************************************/
 
 #include <hidef.h> 

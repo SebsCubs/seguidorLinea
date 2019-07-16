@@ -1,13 +1,3 @@
-/*
- * adc.h
- *
- *  Created on: Jun 29, 2019
- *      Author: david
- */
-
-#ifndef ADC_H_
-#define ADC_H_
-
 ///******************************************************************************
 ///*  UNIVERSIDAD NACIONAL DE COLOMBIA - FACULTAD DE INGENIERÍA - SEDE BOGOTÁ   *
 ///*     Departamento de Ing. Mecánica y Mecatrónica  - Microcontroladores      *
@@ -20,6 +10,9 @@
 ///*                	                                                          *
 ///*Documentación:	-Hoja de datos	para MCU QE16 NXP	                      *
 ///*****************************************************************************/
+
+#ifndef ADC_H_
+#define ADC_H_
 
 #include <hidef.h> 							/* for EnableInterrupts macro */
 #include "derivative.h" 					/* include peripheral declarations */

@@ -18,6 +18,7 @@
 #include "adc.h"
 #include "tpm.h"
 #include "sci.h"
+#include "kbi.h"
 
 //Declaracion de variables
 volatile unsigned int maxSum;
@@ -39,6 +40,7 @@ void main(void) {
 	mainTPM();
 	SCI_init();
 	IIC_main();
+	KBI_init();
 
 	//Inicializar variables
 	TPM3C0V = 0;
@@ -143,6 +145,14 @@ void main(void) {
 
 		} else {
 			TPM3C0V = 0;
+			TPM3C1V = 0;
+			TPM3C2V = 0;
+			TPM3C3V = 0;
+		}
+		if (stopKBI){
+			TPM3C0V = 0;
+			TPM3C1V = 0;
+			TPM3C2V = 0;
 			TPM3C3V = 0;
 		}
 		loopMainADC();
